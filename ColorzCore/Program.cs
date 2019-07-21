@@ -5,7 +5,7 @@ using ColorzCore.DataTypes;
 
 namespace ColorzCore
 {
-    class Program
+    public static class Program
     {
         public static bool Debug = false;
         private static string[] helpstringarr = {"EA Colorz Core. Usage:",
@@ -41,7 +41,7 @@ namespace ColorzCore
         private const int EXIT_SUCCESS = 0;
         private const int EXIT_FAILURE = 1;
 
-        static int Main(string[] args)
+        public static int Main(string[] args)
         {
             EAOptions options = new EAOptions();
 
