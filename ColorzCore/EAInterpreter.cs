@@ -147,6 +147,12 @@ namespace ColorzCore
             return true;
         }
 
+        public void AddDefinitions(Dictionary<string, Definition> definitions)
+        {
+            // https://stackoverflow.com/questions/294138/merging-dictionaries-in-c-sharp cause I don't know a better way. Let me know if there is one!
+            definitions.ToList().ForEach(x => myParser.Definitions.Add(x.Key, x.Value));
+        }
+
         private static IList<Raw> LoadAllRaws(string rawsFolder, string rawsExtension)
         {
             string folder;

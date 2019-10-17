@@ -2,6 +2,8 @@
 using System.IO;
 using ColorzCore.IO;
 using ColorzCore.DataTypes;
+using System.Collections.Generic;
+using ColorzCore.Parser;
 
 namespace ColorzCore
 {
@@ -219,6 +221,17 @@ namespace ColorzCore
             errorStream.Close();
 
             return success ? EXIT_SUCCESS : EXIT_FAILURE;
+        }
+
+        public static bool EAParse(string game, string rawsFolder, string rawsExtension, Stream inStream, string inFileName, Stream outStream, Log log, Dictionary<string, Definition> initialDefinitions)
+        {
+            EAOptions options = new EAOptions();
+
+            EAInterpreter myInterpreter = new EAInterpreter(game, rawsFolder, rawsExtension, inStream, inFileName, outStream, log, options);
+
+            myInterpreter.AddDefinitions(initialDefinitions);
+
+            return myInterpreter.Interpret();
         }
     }
 }
