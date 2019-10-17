@@ -51,7 +51,7 @@ namespace ColorzCore
             Stream inStream = Console.OpenStandardInput();
             string inFileName = "stdin";
 
-            FileStream outStream = null;
+            Stream outStream = null;
             string outFileName = "none";
 
             TextWriter errorStream = Console.Error;

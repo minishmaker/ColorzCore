@@ -18,11 +18,11 @@ namespace ColorzCore
         private EAParser myParser;
         private string game, iFile;
         private Stream sin;
-        private FileStream fout;
+        private Stream fout;
         private Log log;
         private EAOptions opts;
 
-        public EAInterpreter(string game, string rawsFolder, string rawsExtension, Stream sin, string inFileName, FileStream fout, Log log, EAOptions opts)
+        public EAInterpreter(string game, string rawsFolder, string rawsExtension, Stream sin, string inFileName, Stream fout, Log log, EAOptions opts)
         {
             this.game = game;
 
