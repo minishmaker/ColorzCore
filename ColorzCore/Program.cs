@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 using ColorzCore.IO;
 using ColorzCore.DataTypes;
-using System.Collections.Generic;
 using ColorzCore.Parser;
+using ColorzCore.Lexer;
 
 namespace ColorzCore
 {
@@ -232,6 +234,12 @@ namespace ColorzCore
             myInterpreter.AddDefinitions(initialDefinitions);
 
             return myInterpreter.Interpret();
+        }
+
+        public static Definition CreateDefinition(string value)
+        {
+            Tokenizer t = new Tokenizer();
+            return new Definition(t.TokenizePhrase(value, "TMCR Rom", 1, 0, value.Length).ToList());
         }
     }
 }
